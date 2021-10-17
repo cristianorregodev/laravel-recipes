@@ -9,7 +9,7 @@
 @section('content')
     <h2 class="text-center mt-5">Administra tus recetas</h2>
 
-    <div class="col-md-10 mx-auto bg-white p-3">
+    <div class="col-md-10 mx-auto bg-white p-3 mb-5">
         <table class="table table-hover">
             <thead class="bg-primary text-light">
                 <tr>
@@ -59,5 +59,5 @@
                 <p class="text-center">Aún no le has dado Me Gusta a alguna receta.</p>
             @endif
         </div>
-</div>
+    </div>
 @endsection

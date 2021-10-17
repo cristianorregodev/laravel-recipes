@@ -22,9 +22,10 @@
 </head>
 <body>
     <div id="app">
+        <!--Nav por user logged in-->
         <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('recetas.index') }}">
+                <a class="navbar-brand" href="{{ route('inicio.index') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -80,6 +81,7 @@
             </div>
         </nav>
 
+        <!-- Nav for categories-->
         <nav class="navbar navbar-expand-md navbar-light categorias-bg">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#categorias" aria-controls="categorias" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -91,7 +93,7 @@
                     <ul class="navbar-nav w-100 d-flex justify-content-between">
                         @foreach ($categories as $category)
                         <li class="nav-item">
-                            <a class="nav-link">
+                            <a class="nav-link" href="{{ route('categorias.show', ['Category' => $category->id])}}">
                                {{ $category->name }}
                             </a>
                         </li>
@@ -100,6 +102,8 @@
                 </div>
             </div>
         </nav>
+
+        @yield('hero')
 
         <div class="container">
             <div class="row">

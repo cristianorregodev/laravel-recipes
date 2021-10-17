@@ -10944,6 +10944,7 @@ a.text-dark:focus {
 
 body {
   font-family: "Source Sans Pro", sans-serif;
+  background-color: #f4f0f0;
 }
 
 trix-editor {

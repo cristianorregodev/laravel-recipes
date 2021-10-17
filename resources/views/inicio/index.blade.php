@@ -6,6 +6,24 @@
     crossorigin="anonymous" />
 @endsection
 
+@section('hero')
+    <div class="hero-categorias">
+        <form action="{{route('buscar.show')}}" class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-4 texto-buscar">
+                    <p class="display-4">Encuentra una receta para tu próxima comida</p>
+
+                    <input type="search" 
+                        name="search" 
+                        id="search" 
+                        class="form-control" 
+                        placeholder="Buscar receta">
+                </div>        
+            </div>
+        </form>
+    </div>
+@endsection
+
 @section('content')
     
     <div class="container nuevas-recetas">
