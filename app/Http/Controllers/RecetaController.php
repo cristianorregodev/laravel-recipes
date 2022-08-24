@@ -49,7 +49,7 @@ class RecetaController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         //validación
         $data = request()->validate([
             'title' => 'required|min:6',
@@ -62,8 +62,8 @@ class RecetaController extends Controller
         $image_route = $request['image']->store('uploads', 'public');
 
         //Image resize
-        $img = Image::make(public_path("storage/{$image_route}"))->fit(1000,550);
-        $img->save();
+        // $img = Image::make(public_path("storage/{$image_route}"))->fit(1000,550);
+        // $img->save();
 
         //Guardar en DB con metodo DB sin modelo
         // DB::table('recetas')->insert([
@@ -160,7 +160,7 @@ class RecetaController extends Controller
             $receta->image = $image_route;
         }
         $receta->save();
-        
+
         //Redireccionar
         return redirect()->action('RecetaController@index');
     }
@@ -178,7 +178,7 @@ class RecetaController extends Controller
 
         //Eliminar receta
         $receta->delete();
-        
+
         //Redireccionar
         return redirect()->action('RecetaController@index');
     }
